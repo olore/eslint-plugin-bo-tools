@@ -1,0 +1,26 @@
+{
+  "name": "eslint-plugin-bo-tools",
+  "version": "0.0.1",
+  "description": "ESLint plugin for rules I care about",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "Brian Olore",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests/**/*.js"
+  },
+  "dependencies": {
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "~1.2.0",
+    "mocha": "^2.3.3"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}
