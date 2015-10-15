@@ -20,30 +20,30 @@ var rule = require("../../../lib/rules/no-new-date"),
 //------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
+var preferMomentError = [{ message: 'Prefer moment() over new Date()' }];
+
 ruleTester.run("no-new-date", rule, {
 
   valid: [
     {
-      code: "var something = 'this is not a new Date()';", 
+      code: 'var something = "this is not a new Date()";', 
+    },
+    {
+      code: 'var iPrefer = moment();', 
     }
   ],
 
   invalid: [
     {
-      code: "var d = new Date();",
-      errors: [{
-        message: "Prefer moment() over new Date()"
-        //type: "Me too"
-      }]
+      code: 'var d = new Date();',
+      errors: preferMomentError
     },
-    {
-      code: "var something = 'this is not a new Date()'; \
-          var butThisIs = new Date();",
 
-      errors: [{
-        message: "Prefer moment() over new Date()"
-        //type: "Me too"
-      }]
+    {
+      code: 'var something = "abc";      \
+          var d = new Date(123);         \
+      ',
+      errors: preferMomentError
     }
   ]
 });
