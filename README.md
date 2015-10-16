@@ -36,15 +36,20 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "bo-tools/rule-name": 2
+        "bo-tools/jasmine-done": 2,
+        "bo-tools/then-catch": 2,
+        "bo-tools/no-new-date": 2
     }
 }
 ```
 
 ## Supported Rules
 
-* Fill in provided rules here
-
+| Name | Description |
+| ------------- | ------------- |
+| jasmine-done  | Require call to done() if using promises in specs |
+| no-new-date   | Prefer moment() over new Date() |
+| then-catch    | Prefer then()/catch() over passing 2 functions to a then() |
 
 
 
